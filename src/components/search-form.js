@@ -2,7 +2,9 @@ import React from 'react';
 
 export default function SearchForm(props) {
     return (
-        <form onSubmit={e => e.preventDefault()}>
+        <form onSubmit={(e)=> {
+            e.preventDefault();
+        }}>
             <label htmlFor="search">Search</label>&emsp;
             <input
                 aria-controls="character-count"
@@ -10,6 +12,7 @@ export default function SearchForm(props) {
                 id="search"
                 name="search"
                 placeholder="Dale Cooper"
+                onChange={(e)=> props.getValue(e)}
             />
         </form>
     );
